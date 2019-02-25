@@ -1,0 +1,393 @@
+.site-container {
+	background-color: $white;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	position: relative;
+
+	&:before {
+		content: "";
+		background-color: $black;
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		transition: opacity 0.2s ease-out;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: -1;
+	}
+}
+
+.site-header {
+	background-color: $white;
+	border-bottom: 1px solid rgba($black, 0.1);
+	flex: 0 0 auto;
+	position: relative;
+	width: 100%;
+	z-index: 8;
+	box-shadow: 0 2px 5px rgba($black, 0.2);
+
+	.site-header-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 24px;
+		padding-bottom: 24px;
+
+		.menu-mobile-toggle {
+			display: block;
+			padding-right: 48px;
+
+			.toggler {
+				font-size: 24px;
+			}
+		}
+
+		.site-header-logo {
+			display: flex;
+			max-width: 280px;
+		}
+
+		.site-header-nav {
+			padding-left: 48px;
+
+			.items {
+				display: none;
+				align-items: center;
+				margin: -6px -24px;
+
+				.item {
+					display: block;
+					padding: 6px 24px;
+
+					.link {
+						font-weight: 700;
+						text-decoration: none;
+						transition: color 0.2s ease-in-out;
+
+						&.login-button {
+							display: flex;
+							align-items: center;
+							border: 1px solid $color-one-500;
+							padding: 6px 24px;
+							border-radius: 20px;
+
+							.icon {
+								margin-right: 8px;
+								font-size: 20px;
+							}
+						}
+					}
+				}
+
+				&.items-mobile {
+					display: flex;
+					margin: 0;
+
+					.item {
+						padding: 0;
+
+						.link {
+							&.login-button {
+								padding: 0;
+								border: none;
+
+								.icon {
+									margin-right: 0;
+									font-size: 24px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@include breakpoint(walker) {
+			.menu-mobile-toggle {
+				display: none;
+			}
+
+			.site-header-logo {
+			}
+
+			.site-header-nav {
+				.items {
+					display: flex;
+
+					&.items-mobile {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+.site-content {
+	display: flex;
+	flex: 1 0 auto;
+	flex-direction: column;
+	position: relative;
+
+	@at-root {
+		.site-content-inner {
+			display: flex;
+			flex: 1 1 auto;
+			flex-direction: column;
+			padding-bottom: 48px;
+			padding-top: 48px;
+			width: 100%;
+
+			@include breakpoint(runner) {
+				flex-direction: row;
+				justify-content: space-between;
+			}
+		}
+	}
+}
+
+.help-button {
+
+	.inner {
+		max-width: 100%;
+		padding-bottom: 48px;
+	}
+
+	.button {
+		padding: 12px 24px 12px 28px;
+		font-size: 22px;
+		border-radius: 32px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		max-width: 200px;
+		margin-left: auto;
+
+		.icon {
+			font-size: 24px;
+			margin-left: 8px;
+		}
+	}
+}
+
+.site-footer {
+	background-color: $color-bg-dark;
+	color: $white;
+	flex: 0 0 auto;
+	position: relative;
+	transition: all 0.3s ease-out;
+	width: 100%;
+	z-index: 4;
+
+	.site-footer-main {
+		background-color: #2A2A2A;
+
+		.inner {
+			padding-top: 48px;
+			padding-bottom: 48px;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.footer-logo {
+			max-width: 240px;
+		}
+
+		.footer-nav {
+			padding: 48px 0;
+
+			.items {
+				flex-wrap: wrap;
+				margin: -12px -12px -12px 0;
+
+				.item {
+					padding: 12px 12px 12px 32px;
+					position: relative;
+
+					&:before {
+						content: "";
+						background: url('../images/list-bullets.png') no-repeat;
+						background-size: 6px;
+						background-position: left top;
+						position: absolute;
+						left: 0;
+						top: 18px;
+						width: 6px;
+						height: 12px;
+					}
+
+					.link {
+						color: $white;
+					}
+				}
+			}
+		}
+
+		.footer-social {
+			.items {
+				display: flex;
+				margin: 0 -12px;
+
+				.item {
+					padding: 0 12px;
+
+					.link {
+						font-size: 24px;
+						line-height: 1;
+
+						.icon {
+							&.instagram {
+								color: #B74072;
+							}
+
+							&.facebook {
+								color: #2876CD;
+							}
+
+							&.twitter {
+								color: #3DB1E2;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@include breakpoint(walker) {
+			.inner {
+				display: flex;
+			}
+
+			.footer-nav {
+				padding: 0 48px;
+
+				.items {
+					display: flex;
+
+					.item {
+						width: 50%;
+					}
+				}
+			}
+		}
+	}
+
+	.site-footer-attribution {
+		background-color: $white;
+		color: $color-text;
+
+		.inner {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+		.site-copyright {
+			font-size: 14px;
+		}
+	}
+}
+
+.mobile-menu {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 9;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.2s ease-out;
+
+	.mobile-menu-background {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: rgba($black, 0.5);
+	}
+
+	.mobile-menu-container {
+		background-color: $white;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		max-width: 280px;
+		overflow-y: auto;
+		transform: translateX(-280px);
+		transition: all 0.3s ease-out;
+
+		.inner {
+			padding: 24px;
+
+			.heading {
+				position: relative;
+				margin-bottom: 18px;
+
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					height: 6px;
+					width: 16px;
+					left: -24px;
+					top: 9px;
+					background-color: #eaeaea;
+				}
+			}
+
+			.items {
+				&:not(:last-child) {
+					margin-bottom: 20px;
+					padding-bottom: 20px;
+					border-bottom: 1px solid #CCC;
+				}
+
+				.item {
+					padding-left: 24px;
+					position: relative;
+
+					&:not(:last-child) {
+						margin-bottom: 12px;
+					}
+
+					&:before {
+						content: "";
+						background: url('../images/list-bullets.png') no-repeat;
+						background-size: 6px;
+						background-position: left top;
+						position: absolute;
+						left: 0;
+						top: 7px;
+						width: 6px;
+						height: 12px;
+					}
+
+					.link {
+						font-weight: 700;
+						display: flex;
+						align-items: center;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+
+	@include breakpoint(walker) {
+		display: none;
+	}
+
+	&.is-toggled {
+		opacity: 1;
+		visibility: visible;
+
+		.mobile-menu-container {
+			transform: translateX(0);
+		}
+	}
+}

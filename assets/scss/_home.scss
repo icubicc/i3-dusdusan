@@ -1,0 +1,86 @@
+.home-page-container {
+	.home-page-header {
+		background-color: #16B8B2;
+		background-image: url('../images/hero-pattern.png');
+		background-repeat: no-repeat;
+		background-position: bottom center;
+		background-size: cover;
+
+		.home-hero {
+			background-image: url('../images/hero-image.png');
+			background-repeat: no-repeat;
+			background-position: 100% top;
+			background-size: 150%;
+
+			.inner {
+				min-height: 480px;
+				align-items: center;
+				padding-top: 48px;
+				padding-bottom: 48px;
+			}
+
+			.hero-text {
+				color: $white;
+				padding-top: 66%;
+				text-align: center;
+
+				.title-1 {
+					margin-bottom: 8px;
+				}
+
+				.text {
+					margin-bottom: 48px;
+				}
+
+				.button {
+					width: 100%;
+					max-width: 280px;
+					padding: 12px;
+					border-radius: 32px;
+				}
+			}
+
+			@include breakpoint(walker) {
+				background-position: top center;
+				background-size: cover;
+
+				.inner {
+					display: flex;
+				}
+
+				.hero-text {
+					width: 33%;
+					padding-top: 0;
+					text-align: left;
+				}
+			}
+		}
+	}
+
+	.home-page-content {
+		.inner {
+			padding-top: 64px;
+			padding-bottom: 64px;
+		}
+
+		.header {
+			position: relative;
+			padding-bottom: 24px;
+			padding-left: 32px;
+			margin-bottom: 32px;
+
+			&:after {
+				content: '';
+				width: 100%;
+				max-width: 542px;
+				height: 3px;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				background: url('../images/title-underline.png') no-repeat;
+				background-position: bottom left;
+				background-size: 100%;
+			}
+		}
+	}
+}
