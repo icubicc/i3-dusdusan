@@ -579,8 +579,8 @@ window.onresize = addjustBodyTop;
 // Custom File Input
 function customFileInput() {
 	var $container = document.getElementsByClassName('file-input-container');
-	for($i=0; $i<$container.length; $i++) {
-		var $toggler = $container[$i].getElementsByClassName('input')[0];
+	for(var i=0; i<$container.length; i++) {
+		var $toggler = $container[i].getElementsByClassName('input')[0];
 
 		$toggler.onchange = function() {
 			var fileLabel = this.parentNode.getElementsByClassName('name')[0];
@@ -605,8 +605,8 @@ customFileInput();
 // Password Toggle
 function passwordToggle() {
 	var $container = document.getElementsByClassName('password-toggle');
-	for($i=0; $i<$container.length; $i++) {
-		var $toggler = $container[$i].getElementsByClassName('toggler')[0];
+	for(var i=0; i<$container.length; i++) {
+		var $toggler = $container[i].getElementsByClassName('toggler')[0];
 
 		$toggler.onclick = function() {
 			var $parent = this.parentNode;

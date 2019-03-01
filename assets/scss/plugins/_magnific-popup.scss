@@ -130,7 +130,7 @@ button.mfp-arrow,
 button.mfp-close {
 	overflow: visible;
 	cursor: pointer;
-	background: transparent;
+	background: $color-text-light;
 	border: 0;
 	-webkit-appearance: none;
 	display: block;
