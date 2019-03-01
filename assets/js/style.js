@@ -26,7 +26,7 @@
 
 	// fluidvids
 	fluidvids.init({
-		selector: ['.js-fluidvids'],
+		selector: ['.js-fluidvids iframe'],
 		players: ['www.youtube.com']
 	});
 
@@ -526,20 +526,103 @@
 		});
 	}();
 
-	//Mobile Menu
+	// Mobile Menu
 	function mobileMenuToggle() {
 		var toggler = document.getElementById('mobile-menu-toggler');
 		var mobileMenu = document.getElementById('mobile-menu');
 		var mobileMenuBackground = mobileMenu.childNodes[1];
 
-		toggler.onclick = function() {
+		toggler.onclick = function(e) {
 			mobileMenu.classList.add('is-toggled');
+
+			return false;
 		};
 
 		mobileMenuBackground.onclick = function() {
 			mobileMenu.classList.remove('is-toggled');
 		};
+
+		return false;
 	};
 	mobileMenuToggle();
+
+// Faq Toggle
+var faqToggler = document.querySelectorAll('.faq-item-toggler');
+for(var i = 0; i < faqToggler.length; i++) {
+	faqToggler[i].addEventListener('click', openAccordion);
+}
+
+//Use this as the callback if you would like multiple dropdowns to be open
+function openAccordion(e) {
+	var parent = this.parentElement;
+	var faqcontent = parent.childNodes[1];
+	var faqanswer = faqcontent.childNodes[3];
+
+	if (!parent.classList.contains('is-toggled')) {
+		parent.classList.add('is-toggled');
+		faqanswer.style.maxHeight = faqanswer.scrollHeight + 'px';
+	}
+	else {
+		parent.classList.remove('is-toggled');
+		faqanswer.style.maxHeight = '0px';
+	}
+}
+
+function addjustBodyTop() {
+	var header = document.getElementById('site-header');
+
+	document.body.style.paddingTop = header.offsetHeight + 'px';
+}
+window.onload = addjustBodyTop;
+window.onresize = addjustBodyTop;
+
+// Custom File Input
+function customFileInput() {
+	var $container = document.getElementsByClassName('file-input-container');
+	for($i=0; $i<$container.length; $i++) {
+		var $toggler = $container[$i].getElementsByClassName('input')[0];
+
+		$toggler.onchange = function() {
+			var fileLabel = this.parentNode.getElementsByClassName('name')[0];
+			var filenameHtml = '';
+			var fullPath = this.value;
+			if (fullPath) {
+						var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+						var filename = fullPath.substring(startIndex);
+						if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+										filename = filename.substring(1);
+						}
+						filenameHtml = filename;
+			}
+
+			// Log the clicked element in the console
+			fileLabel.innerHTML = filenameHtml;
+		};
+	}
+};
+customFileInput();
+
+// Password Toggle
+function passwordToggle() {
+	var $container = document.getElementsByClassName('password-toggle');
+	for($i=0; $i<$container.length; $i++) {
+		var $toggler = $container[$i].getElementsByClassName('toggler')[0];
+
+		$toggler.onclick = function() {
+			var $parent = this.parentNode;
+			var $passwordInput = $parent.getElementsByClassName('input')[0];
+
+			if($passwordInput.type == 'password') {
+				$passwordInput.type = 'text';
+				$parent.classList.add('is-toggled');
+			}
+			else {
+				$passwordInput.type = 'password';
+				$parent.classList.remove('is-toggled');
+			}
+		};
+	}
+};
+passwordToggle();
 
 })();

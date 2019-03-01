@@ -1,0 +1,93 @@
+.career-page-container {
+	.career-page-header {
+		background-image: url('../images/career-hero.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+
+		.career-hero {
+			background-color: rgba(#16B8B2, 0.5);
+			background-image: url('../images/hero-pattern.png');
+			background-repeat: no-repeat;
+			background-position: bottom center;
+			background-size: cover;
+
+			.inner {
+				min-height: 200px;
+				display: flex;
+				align-items: center;
+				padding-top: 48px;
+				padding-bottom: 48px;
+
+				@include breakpoint(walker) {
+					min-height: 280px;
+				}
+			}
+
+			.hero-text {
+				color: $white;
+				text-align: center;
+
+				.title-1 {
+					margin-bottom: 8px;
+				}
+
+				.title-2 {
+				}
+
+				.text {
+				}
+
+				.button {
+					width: 100%;
+					max-width: 280px;
+					padding: 12px;
+					border-radius: 32px;
+				}
+			}
+
+			@include breakpoint(walker) {
+
+				.hero-text {
+					width: 33%;
+					padding-top: 0;
+					text-align: left;
+				}
+			}
+		}
+	}
+
+	.career-page-content {
+		.inner {
+			padding-top: 64px;
+			padding-bottom: 64px;
+		}
+
+		.header {
+			position: relative;
+			padding-bottom: 24px;
+			margin-bottom: 48px;
+
+			&:after {
+				content: '';
+				width: 100%;
+				max-width: 542px;
+				height: 3px;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				background: url('../images/title-underline.png') no-repeat;
+				background-position: bottom left;
+				background-size: 100%;
+			}
+
+			@include breakpoint(crawler) {
+				padding-left: 32px;
+			}
+		}
+
+		.content {
+
+		}
+	}
+}

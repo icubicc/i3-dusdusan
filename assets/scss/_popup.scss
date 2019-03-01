@@ -1,4 +1,10 @@
 .popup-inline {
 	background-color: $white;
 	padding: 32px;
+	position: relative;
+	border-radius: 8px;
+
+	.popup-header {
+		margin-bottom: 32px;
+	}
 }

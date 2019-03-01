@@ -43,9 +43,17 @@ Tags: responsive-layout, mobile-first
 @import "slider";
 @import "table";
 @import "toggle";
+@import "post";
 
 // pages
 @import "home";
+@import "about";
+@import "contact";
+@import "faq";
+@import "career";
+@import "missing";
+@import "principal";
+@import "account";
 
 // media
 @import "mobile";

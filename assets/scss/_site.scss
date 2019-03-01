@@ -23,7 +23,8 @@
 	background-color: $white;
 	border-bottom: 1px solid rgba($black, 0.1);
 	flex: 0 0 auto;
-	position: relative;
+	position: fixed;
+	top: 0;
 	width: 100%;
 	z-index: 8;
 	box-shadow: 0 2px 5px rgba($black, 0.2);
@@ -79,6 +80,12 @@
 							}
 						}
 					}
+
+					&.item-current {
+						.link {
+							color: #F5821F;
+						}
+					}
 				}
 
 				&.items-mobile {
@@ -104,7 +111,7 @@
 			}
 		}
 
-		@include breakpoint(walker) {
+		@include breakpoint(runner) {
 			.menu-mobile-toggle {
 				display: none;
 			}
@@ -157,7 +164,7 @@
 
 	.button {
 		padding: 12px 24px 12px 28px;
-		font-size: 22px;
+		font-size: 18px;
 		border-radius: 32px;
 		display: flex;
 		align-items: center;
@@ -166,8 +173,16 @@
 		margin-left: auto;
 
 		.icon {
-			font-size: 24px;
+			font-size: 20px;
 			margin-left: 8px;
+		}
+
+		@include breakpoint(walker) {
+			font-size: 22px;
+
+			.icon {
+				font-size: 24px;
+			}
 		}
 	}
 }
@@ -255,7 +270,7 @@
 			}
 		}
 
-		@include breakpoint(walker) {
+		@include breakpoint(runner) {
 			.inner {
 				display: flex;
 			}
@@ -373,12 +388,18 @@
 						align-items: center;
 						text-decoration: none;
 					}
+
+					&.item-current {
+						.link {
+							color: #F5821F;
+						}
+					}
 				}
 			}
 		}
 	}
 
-	@include breakpoint(walker) {
+	@include breakpoint(runner) {
 		display: none;
 	}
 

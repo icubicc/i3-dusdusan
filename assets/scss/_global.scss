@@ -7,7 +7,7 @@
 	color: $white;
 	display: inline-block;
 	line-height: inherit;
-	padding: 3px 12px;
+	padding: 8px 16px;
 	position: relative;
 	text-align: center;
 	transition: all 0.2s ease-out;
@@ -49,7 +49,7 @@
 		&:hover,
 		&:focus {
 			border-color: $color-one-600;
-			color: $color-one-400;
+			color: $color-one-600;
 		}
 
 		&:active {

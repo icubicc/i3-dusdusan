@@ -12,10 +12,10 @@
 						</div>
 						<div class="footer-nav">
 							<ul class="items">
-								<li class="item"><a href="#" class="link">Kebijakan & Ketentuan</a></li>
-								<li class="item"><a href="#" class="link">Perusahaan</a></li>
-								<li class="item"><a href="#" class="link">Karir</a></li>
-								<li class="item"><a href="#" class="link">Hubungi Kami</a></li>
+								<li class="item"><a href="terms-condition.html" class="link">Kebijakan & Ketentuan</a></li>
+								<li class="item"><a href="about.html" class="link">Perusahaan</a></li>
+								<li class="item"><a href="career.html" class="link">Karir</a></li>
+								<li class="item"><a href="contact.html" class="link">Hubungi Kami</a></li>
 							</ul>
 						</div>
 						<div class="footer-social">
@@ -33,6 +33,70 @@
 					</div>
 				</div>
 			</footer>
+
+			<!-- Popup Login -->
+			<div id="popup-login" class="popup-inline mfp-hide popup-login">
+				<div class="popup-header">
+					<h2 class="title">Login</h2>
+				</div>
+				<div class="popup-content">
+					<form class="form">
+						<div class="form-text">
+							<label class="label">Username*</label>
+							<input type="text" class="input">
+						</div>
+						<div class="form-text">
+							<label class="label">Password*</label>
+							<div class="password-toggle">
+								<input type="password" class="input">
+								<span class="toggler">
+									<svg class="icon" role="img"><use xlink:href="assets/images/svg-symbols.svg#icon-eye"></use></svg>
+								</span>
+							</div>
+						</div>
+						<div class="form-checkbox">
+							<input type="checkbox" id="remember-me">
+							<label for="remember-me" class="label">
+								<span class="box"><svg class="icon" role="img"><use xlink:href="assets/images/svg-symbols.svg#icon-check"></use></svg></span>
+								<span class="text">Ingat saya</span>
+							</label>
+						</div>
+						<div class="form-submit">
+							<button class="button">Login</button>
+							<p class="forgot-password"><a href="#popup-forgot-password" class="js-popup-link">Forgotten your password?</a></p>
+						</div>
+					</form>
+					<div class="register-link">
+						<h2 class="heading">Not yet registered?</h2>
+						<a href="#" class="button button-orange">Sign up</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Popup Forgot Password -->
+			<div id="popup-forgot-password" class="popup-inline mfp-hide popup-forgot-password">
+				<div class="popup-header">
+					<h2 class="title">Reset password</h2>
+					<p class="subtitle">Input your userame & email address to get a notification email
+					to reset your password</p>
+				</div>
+				<div class="popup-content">
+					<form class="form">
+						<div class="form-text">
+							<label class="label">Username*</label>
+							<input type="text" class="input">
+						</div>
+						<div class="form-text">
+							<label class="label">Email Address*</label>
+							<input type="email" class="input">
+						</div>
+						<div class="form-submit">
+							<button class="button">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
 		</div> <!-- #site-container -->
 
 		<!--build:js assets/js/vendor.js -->

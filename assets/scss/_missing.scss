@@ -1,0 +1,49 @@
+.missing-page-container {
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: -107px;
+		left: 0;
+		right: 0;
+		background: url('../images/404-background.jpg') no-repeat;
+		background-position: bottom;
+		background-size: cover;
+	}
+
+	.inner {
+		padding-top: 48px;
+		padding-bottom: 48px;
+		position: relative;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+
+		.missing-text {
+			width: 60%;
+			max-width: 410px;
+			text-align: center;
+
+			.image {
+				margin-bottom: 24px;
+			}
+
+			.text {
+				margin-bottom: 6px;
+			}
+
+			.link {
+				font-weight: 700;
+			}
+		}
+
+		@include breakpoint(walker) {
+			min-height: 480px;
+
+			.missing-text {
+				width: 100%;
+			}
+		}
+	}
+}

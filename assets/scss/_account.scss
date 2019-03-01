@@ -1,0 +1,116 @@
+.reset-password-frame {
+	width: 100%;
+	max-width: 640px;
+	margin: 0 auto;
+	box-shadow: 0 2px 5px rgba($black, 0.2);
+	border-radius: 12px;
+	padding: 32px;
+	text-align: center;
+
+	.header {
+		margin-bottom: 32px;
+	}
+
+	.content {
+		a {
+			color: #F5821F;
+		}
+
+		.form {
+			text-align: left;
+
+			.form-submit {
+				text-align: center;
+				padding-top: 8px;
+
+				.button {
+					width: 100%;
+					max-width: 280px;
+					padding: 12px;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+}
+
+.popup-login {
+	max-width: 700px;
+	margin: 0 auto;
+
+	.popup-header {
+		text-align: center;
+	}
+
+	.form {
+		.form-submit {
+			padding-top: 24px;
+			text-align: center;
+
+			.button {
+				padding: 12px;
+				width: 100%;
+				max-width: 280px;
+				border-radius: 5px;
+				margin: 0 auto;
+			}
+
+			.forgot-password {
+				display: block;
+				padding-top: 24px;
+
+				a {
+					color: $color-text-light;
+				}
+			}
+		}
+	}
+
+	.register-link {
+		text-align: center;
+		padding-top: 32px;
+		margin-top: 32px;
+		border-top: 1px solid #CCC;
+
+		.button {
+			padding: 12px;
+			width: 100%;
+			max-width: 280px;
+			border-radius: 5px;
+			margin: 0 auto;
+		}
+	}
+}
+
+.popup-forgot-password {
+	max-width: 700px;
+	margin: 0 auto;
+
+	.popup-header {
+		text-align: center;
+	}
+
+	.form {
+		.form-submit {
+			padding-top: 24px;
+			text-align: center;
+
+			.button {
+				padding: 12px;
+				width: 100%;
+				max-width: 280px;
+				border-radius: 5px;
+				margin: 0 auto;
+			}
+
+			.forgot-password {
+				display: block;
+				padding-top: 24px;
+
+				a {
+					color: $color-text-light;
+				}
+			}
+		}
+	}
+}

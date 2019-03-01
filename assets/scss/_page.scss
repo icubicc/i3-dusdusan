@@ -84,3 +84,69 @@
 		width: 24px;
 	}
 }
+
+.post-page-container {
+	.post-page-header {
+		background-color: #16B8B2;
+		background-image: url('../images/hero-pattern.png');
+		background-repeat: no-repeat;
+		background-position: bottom center;
+		background-size: cover;
+
+		.post-hero {
+
+			.inner {
+				min-height: 200px;
+				display: flex;
+				align-items: center;
+				padding-top: 48px;
+				padding-bottom: 48px;
+
+				@include breakpoint(walker) {
+					min-height: 280px;
+				}
+			}
+
+			.hero-text {
+				color: $white;
+			}
+		}
+	}
+
+	.post-page-content {
+		.inner {
+			padding-top: 64px;
+			padding-bottom: 64px;
+		}
+
+		.header {
+			position: relative;
+			padding-bottom: 24px;
+			margin-bottom: 48px;
+
+			&:after {
+				content: '';
+				width: 100%;
+				max-width: 542px;
+				height: 3px;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				background: url('../images/title-underline.png') no-repeat;
+				background-position: bottom left;
+				background-size: 100%;
+			}
+
+			@include breakpoint(crawler) {
+				padding-left: 32px;
+			}
+		}
+	}
+}
+
+.plain-page {
+	.inner {
+		padding-top: 64px;
+		padding-bottom: 64px;
+	}
+}
